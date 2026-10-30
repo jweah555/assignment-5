@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import LayoutComponent from './LayoutComponent'
-function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter as Router, Routes, Route } from 'react-router';
+import Layout from './Layout';
+import './index.css'
+import Cast from './Cast';
 
+function App() {
   return (
-    <>
-    <LayoutComponent/>
     
-    </>
-  )
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />} />
+          <Route path="/cast" element={<Cast />} />
+        </Routes>
+      </Router>
+   
+  );
 }
 
-export default App
+export default App;

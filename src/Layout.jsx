@@ -1,6 +1,6 @@
-import './App.css';
-import { useState, useEffect } from 'react';
 
+import { useState, useEffect } from 'react';
+import DisplayShow from './DisplayShow';
 function Layout() {
     const [showData, setShowData] = useState(null);
     const [showName, setShowName] = useState('');
@@ -21,6 +21,8 @@ function Layout() {
                 const data = await res.json();
                 setShowData(data);
                 console.log(showData);
+                // console.log(showData[0].show.name);
+
                 
             } catch(err) {
                 console.error("Failed to load profile", err);
@@ -49,6 +51,7 @@ function Layout() {
        
         <button type="submit">Search</button>
         </form>
+        <DisplayShow data={showData}/>
     </section>
     </>
 }
