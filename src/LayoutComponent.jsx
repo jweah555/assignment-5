@@ -3,42 +3,53 @@ import { useState, useEffect } from 'react';
 
 function Layout() {
     const [showData, setShowData] = useState(null);
+    const [showName, setShowName] = useState('');
+    const [count, setCount] = useState('');
+
+    function handleOnSubmit(event) {
+        setCount(count + 1);
+        event.preventDefault();
+    }
 
     useEffect(() => {
         async function fetchShow() {
             try {
-                const res = await fetch("https://jsonplaceholder.typicode.com/users/1")
+                const res = await fetch(`https://api.tvmaze.com/search/shows?q=${showName}`)
                 if(!res.ok) {
                     throw new Error(await res.text())
                 }
                 const data = await res.json();
                 setShowData(data);
-                console.log(data);
+                console.log(showData);
+                
             } catch(err) {
                 console.error("Failed to load profile", err);
             }
         }
         fetchShow();
-    }, [])
+    }, [count])
 
 
     return <>
 
     <section>
         <h1>Show Search</h1>
-        <form>
-        <div>
-            <input placeholder=' Show Name'/>
-        </div>
-        <div>
-            <span></span>
+        <form onSubmit={handleOnSubmit}>
+          
+            <input 
+            type="text"
+            id="showName"
+            value={showName}
+            placeholder=' Show Name'
+            onChange={(event) => setShowName(event.target.value)}
+            />
+            
+            {/* <span></span> */}
             <input placeholder=' Limit'/>
-        </div>
-        <button>Search</button>
+       
+        <button type="submit">Search</button>
         </form>
     </section>
-   
-
     </>
 }
 
