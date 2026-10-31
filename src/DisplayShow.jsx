@@ -46,7 +46,7 @@ function ShowCard({ show }) {
     return (
         <div className="card">
             <div className="each-card">
-                <img src={show.show.image.original} />
+               {show.show.image ? ( <img src={show.show.image.original} />) : <p>No Image</p>}
                 <div className="info">
                     <div id="show-name">{show.show.name}</div>
                     <div>{show.show.id}</div>
