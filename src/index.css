@@ -38,12 +38,20 @@ form button {
   border-radius: 6px;
   border-width: 1px;
   height: 1.75rem;
+  background-color: #086288;
+  color: white;
+}
+
+form button:hover {
+   background-color: #E8E085;
+   color: black;
 }
 
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  gap: 3rem;
 }
 
 .container {
@@ -70,6 +78,14 @@ form button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  
+  /* max-width: 15rem; */
+}
+.card-container > div > .card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
   /* max-width: 15rem; */
 }
 
@@ -77,6 +93,7 @@ form button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: .5rem;
   /* flex-wrap: wrap; */
   /* max-width: 10rem; */
 }
@@ -87,4 +104,18 @@ form button {
   white-space: normal; */
   max-width: 10rem;
 
+}
+
+.each-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.each-card > button {
+  height: 1.8rem;
+  margin-top: .5rem;
+  border-radius: 8px;
+  border-width: 1px;
+  background-color: #D5E8E6;
 }

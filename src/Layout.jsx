@@ -21,7 +21,7 @@ function Layout() {
                 const data = await res.json();
                 setShowData(data);
                 console.log(showData);
-                // console.log(showData[0].show.name);
+           
 
                 
             } catch(err) {
@@ -46,8 +46,8 @@ function Layout() {
             onChange={(event) => setShowName(event.target.value)}
             />
             
-            {/* <span></span> */}
-            <input placeholder=' Limit'/>
+
+            
        
         <button type="submit">Search</button>
         </form>
