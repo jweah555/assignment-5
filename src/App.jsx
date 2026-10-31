@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router';
+
 import Layout from './Layout';
 import './index.css'
 
@@ -6,11 +6,7 @@ import './index.css'
 function App() {
   return (
     
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />} />
-        </Routes>
-      </Router>
+      <Layout/>
    
   );
 }
